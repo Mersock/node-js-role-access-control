@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  node-app:
+    build: .
+    container_name: node-role-app
+    ports: 
+      - "8511:8511"
+    volumes: 
+      - .:/usr/src/app 
+      - /usr/src/app/node_modules
+  mongo-node-role:
+    image: mongo:4.2.2
+    container_name: node-role-app-mongo
+    ports: 
+      - "28017:27017"
+  
